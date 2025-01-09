@@ -1,0 +1,114 @@
+<div>
+  <div class="submit-form">
+    <h2 class="title text-center">Quote Calculator</h2>
+    <div *ngIf="errorMessage" class="alert alert-warning" role="alert">
+      {{ errorMessage }}
+    </div>
+    <form [formGroup]="userForm" (ngSubmit)="saveLoanData()">
+      <div class="form-group">
+        <label for="productId" class="form-label">Product</label>
+        <select id="product" class="form-select" formControlName="product" (change)="onProductChange()">
+          <option *ngFor="let product of products" [value]="product.productName">{{ product.productName }}</option>
+        </select>
+
+        <div *ngIf="userFormControl['product'].errors?.['serverError']" class="alert alert-warning">
+          {{ userFormControl['product'].errors?.['serverError'][0] }}
+        </div>
+        <div *ngIf="validationMessage" class="alert alert-info" role="alert">
+          {{ validationMessage }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="requiredAmount" class="form-label">Loan Amount</label>
+        <input type="range" class="form-range" id="requiredAmount" formControlName="requiredAmount" min="1000" max="10000" step="100">
+        <span>{{ userFormControl['requiredAmount'].value | currency }}</span>
+        <div *ngIf="userFormControl['requiredAmount'].errors?.['serverError']" class="alert alert-warning">
+          {{ userFormControl['requiredAmount'].errors?.['serverError'][0] }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="term" class="form-label">Loan Term (Months)</label>
+        <input type="range" class="form-range" id="term" formControlName="term" [min]="minTerm" [max]="12" step="1">
+        <span>{{ userFormControl['term'].value }} months</span>
+        <div *ngIf="userFormControl['term'].errors?.['serverError']" class="alert alert-warning">
+          {{ userFormControl['term'].errors?.['serverError'][0] }}
+        </div>
+      </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <label for="title" class="form-label">Title</label>
+        <select class="form-control" id="title" formControlName="title">
+          <option value="Mr">Mr</option>
+          <option value="Mrs">Mrs</option>
+          <option value="Miss">Miss</option>
+        </select>
+        <div *ngIf="userFormControl['title'].errors?.['serverError']" class="alert alert-warning">
+          {{ userFormControl['title'].errors?.['serverError'][0] }}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="form-group">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstName" formControlName="firstName">
+        <div *ngIf="userFormControl['firstName'].invalid && userFormControl['firstName'].touched" class="alert alert-warning">
+          First Name is required
+        </div>
+        <div *ngIf="userFormControl['firstName'].errors?.['serverError']" class="alert alert-warning">
+          {{ userFormControl['firstName'].errors?.['serverError'][0] }}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastName" formControlName="lastName">
+        <div *ngIf="userFormControl['lastName'].invalid && userFormControl['lastName'].touched" class="alert alert-warning">
+          Last Name is required
+        </div>
+        <div *ngIf="userFormControl['lastName'].errors?.['serverError']" class="alert alert-warning">
+          {{ userFormControl['lastName'].errors?.['serverError'][0] }}
+        </div>
+      </div>
+      </div>
+</div>
+
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+        <!-- <div *ngIf="userFormControl['email'].invalid && userFormControl['email'].touched" class="alert alert-warning">
+          Valid Email is required
+        </div> -->
+        <div *ngIf="userFormControl['email'].errors?.['serverError']" class="alert alert-warning">
+          {{ userFormControl['email'].errors?.['serverError'][0] }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="mobile" class="form-label">Mobile</label>
+        <input type="text" class="form-control" id="mobile" formControlName="mobile">
+        <!-- <div *ngIf="userFormControl['mobile'].invalid && userFormControl['mobile'].touched" class="alert alert-warning">
+          Mobile is required
+        </div> -->
+        <div *ngIf="userFormControl['mobile'].errors?.['serverError']" class="alert alert-warning">
+          {{ userFormControl['mobile'].errors?.['serverError'] }}
+        </div>
+      </div>
+
+    
+      <div class="form-group">
+        <label for="dateofBirth" class="form-label">Date of Birth</label>
+        <input type="date" id="dateofBirth" formControlName="dateofBirth" class="form-control">
+        <!-- <div *ngIf="userFormControl['dateofBirth'].invalid && userFormControl['dateofBirth'].touched" class="alert alert-warning">
+          Date of Birth is required
+        </div> -->
+        <div *ngIf="userFormControl['dateofBirth'].errors?.['serverError']" class="alert alert-warning">
+          {{ userFormControl['dateofBirth'].errors?.['serverError'][0] }}
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
