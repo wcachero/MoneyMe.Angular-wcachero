@@ -1,4 +1,4 @@
-name: Deploy Angular App
+name: Deploy Angular App to GitHub Pages
 
 on:
   push:
@@ -22,10 +22,10 @@ jobs:
       run: npm install
 
     - name: Build Angular app
-      run: npm run build -- --configuration production
+      run: npm run build -- --configuration production --base-href /MoneyMe.Angular-wcachero/
 
     - name: Deploy to GitHub Pages
-      uses: wcachero/main
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        personal_token: ${{ secrets.GH_PAT }}
         publish_dir: ./dist/MM
