@@ -20,8 +20,8 @@
       </div>
       <div class="form-group">
         <label for="requiredAmount" class="form-label">Loan Amount</label>
-        <input type="range" class="form-range" id="requiredAmount" formControlName="requiredAmount" min="1000" max="10000" step="100">
-        <span>{{ userFormControl['requiredAmount'].value | currency }}</span>
+        <input type="range" class="form-range" id="requiredAmount" formControlName="requiredAmount" min="1000" max="20000" step="100">
+        <span><p class="text-center">{{ userFormControl['requiredAmount'].value | currency }}</p></span>
         <div *ngIf="userFormControl['requiredAmount'].errors?.['serverError']" class="alert alert-warning">
           {{ userFormControl['requiredAmount'].errors?.['serverError'][0] }}
         </div>
@@ -30,7 +30,7 @@
       <div class="form-group">
         <label for="term" class="form-label">Loan Term (Months)</label>
         <input type="range" class="form-range" id="term" formControlName="term" [min]="minTerm" [max]="12" step="1">
-        <span>{{ userFormControl['term'].value }} months</span>
+        <span><p class="text-center">{{ userFormControl['term'].value }} months</p></span>
         <div *ngIf="userFormControl['term'].errors?.['serverError']" class="alert alert-warning">
           {{ userFormControl['term'].errors?.['serverError'][0] }}
         </div>
