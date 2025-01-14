@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BlacklistedPhoneService {
-  private apiUrl = 'https://634f-136-158-79-79.ngrok-free.app/api';
+  private apiUrl = 'https://wcachero99.azurewebsites.net/api/customerdetail/api';
 
   constructor(private http: HttpClient) {}
 

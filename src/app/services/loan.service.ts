@@ -8,7 +8,7 @@ import { LoanDetails } from '../models/loanDetail.model';
   providedIn: 'root'
 })
 export class LoanService {
-  private apiUrl = 'https://634f-136-158-79-79.ngrok-free.app/api/customerDetail';
+  private apiUrl = 'https://wcachero99.azurewebsites.net/api/customerdetail/api/customerDetail';
 
   constructor(private http: HttpClient) {}
 

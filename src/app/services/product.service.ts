@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = 'https://634f-136-158-79-79.ngrok-free.app/api/LoanProduct';
+  private apiUrl = 'https://wcachero99.azurewebsites.net/api/customerdetail/api/LoanProduct';
 
   constructor(private http: HttpClient) {}
 
