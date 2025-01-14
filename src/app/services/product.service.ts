@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = 'https://wcachero99.azurewebsites.net/api/LoanProduct';
+  private apiUrl = 'https://wcachero99.azurewebsites.net/api/LoanProduct/';
 
   constructor(private http: HttpClient) {}
 
