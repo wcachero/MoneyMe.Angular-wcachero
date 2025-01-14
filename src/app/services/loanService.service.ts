@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoanDetails } from '../models/loanDetail.model';
 
-const baseUrl = 'https://localhost:7039/api/customerDetail';
+const baseUrl = 'https://634f-136-158-79-79.ngrok-free.app/api/customerDetail';
 
 @Injectable({
   providedIn: 'root',
