@@ -41,7 +41,7 @@
             <p><strong>Finance Amount:</strong> </p>
           </div>
           <div class="flex-grow-2">
-            {{ loanData.financeAmount }}
+            {{ loanData.financeAmount | currency }}
           </div>
         </div>
 
@@ -59,7 +59,7 @@
             <p><strong>Repayments from: (monthly payment)</strong> </p>
           </div>
           <div class="flex-grow-2">
-            {{ loanData.monthlyAmortization }}
+            {{ loanData.monthlyAmortization | currency }}
           </div>
         </div>
       </div>
@@ -83,7 +83,6 @@
           <div class="form-group">
             <label for="term" class="form-label">Term</label>
             <input type="range" class="form-range" id="term" formControlName="term" [min]="3" [max]="12" step="1">
-          
             <span><p class="text-center">{{ updateFormControl['term'].value }} months</p></span>
             <div *ngIf="submitted && updateFormControl['term'].errors" class="text-danger">
               <div *ngIf="updateFormControl['term'].errors['required']">Term is required.</div>
@@ -92,7 +91,7 @@
           <div class="form-group">
             <label for="financeAmount" class="form-label">Finance Amount</label>
             <input type="range" class="form-range" id="financeAmount" formControlName="financeAmount" min="1000" max="20000" step="100">
-            <span class="text-center"><p class="text-center">${{ updateFormControl['financeAmount'].value }}</p></span>
+            <span class="text-center"><p class="text-center">{{ updateFormControl['financeAmount'].value | currency }}</p></span>
             <div *ngIf="submitted && updateFormControl['financeAmount'].errors" class="text-danger">
               <div *ngIf="updateFormControl['financeAmount'].errors['required']">Finance amount is required.</div>
             </div>
