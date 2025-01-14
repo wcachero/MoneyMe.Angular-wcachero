@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoanDetails } from '../models/loanDetail.model';
 
-const baseUrl = 'https://wcachero99.azurewebsites.net/api/customerdetail/api/customerDetail';
+const baseUrl = 'https://wcachero99.azurewebsites.net/api/customerdetail';
 
 @Injectable({
   providedIn: 'root',
