@@ -23,7 +23,7 @@ jobs:
       run: npm install
 
     - name: Build Angular app
-      run: ng build --configuration production --base-href https://github.com/wcachero/MoneyMe.Angular-wcachero
+      run: npm run build --configuration production --base-href "https://github.com/wcachero/MoneyMe.Angular-wcachero"
 
     - name: Deploy to GitHub Pages
       uses: wcachero/gh-pages
