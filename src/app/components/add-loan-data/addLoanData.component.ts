@@ -44,8 +44,10 @@ export class AddLoanDataComponent implements OnInit {
   ngOnInit(): void {
     this.loadProducts();
   }
+
   onProductChange(): void {
-    const selectedProductId = this.userForm.get('productName')?.value;
+    debugger;
+    const selectedProductId = this.userForm.get('product')?.value;
     const selectedProduct = this.products.find(product => product.productName === selectedProductId);
     if (selectedProduct) {
       this.minTerm = selectedProduct.minTerm;
