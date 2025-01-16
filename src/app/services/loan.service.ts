@@ -8,7 +8,7 @@ import { LoanDetails } from '../models/loanDetail.model';
   providedIn: 'root'
 })
 export class LoanService {
-  private apiUrl = 'https://wcachero99.azurewebsites.net/api/customerDetail';
+  private apiUrl = 'https://wcacheromm.azurewebsites.net/api/customerDetail';
 
   constructor(private http: HttpClient) {}
 
