@@ -46,7 +46,6 @@ export class AddLoanDataComponent implements OnInit {
   }
 
   onProductChange(): void {
-    debugger;
     const selectedProductId = this.userForm.get('product')?.value;
     const selectedProduct = this.products.find(product => product.productName === selectedProductId);
     if (selectedProduct) {
