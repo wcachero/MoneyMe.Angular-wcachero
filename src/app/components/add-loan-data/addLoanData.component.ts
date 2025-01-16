@@ -51,16 +51,15 @@ export class AddLoanDataComponent implements OnInit {
     if (selectedProduct) {
       this.minTerm = selectedProduct.minTerm;
       this.userForm.get('term')?.setValue(this.minTerm);
-      if (selectedProduct.ProductName === 'ProductA' || selectedProduct.interestRate ===0) {
+      if (selectedProduct.ProductName === 'ProductA' || selectedProduct.interestRate === 0) {
         this.validationMessage = `This is interest-free. Minimum duration is ${this.minTerm} months.`;
       }
-    }
-    else
-    {
+
+      else {
         this.validationMessage = `The first ${selectedProduct.initialMonthNoInterest} months are interest-free. Minimum duration is ${this.minTerm} months.`;
       }
     }
-  
+  }
 
   saveLoanData() {
     // if (this.userForm.invalid) {
