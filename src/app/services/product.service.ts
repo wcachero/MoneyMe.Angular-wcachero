@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/operators';
 export class ProductService {
   //private apiUrl = 'https://wcacheromm.azurewebsites.net/api/LoanProduct/';
 
- private apiUrl= 'https://49.147.72.195/api/api/LoanProduct';
+ private apiUrl= 'https://49.147.72.195/api/LoanProduct';
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<any[]> {
