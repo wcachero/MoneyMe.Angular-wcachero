@@ -5,7 +5,7 @@ import { LoanDetails } from '../models/loanDetail.model';
 
 //const baseUrl = 'https://wcacheromm.azurewebsites.net/api/customerdetail';
 
-const baseUrl= 'https://49.147.72.195/api/customerdetail';
+const baseUrl= 'http://49.147.72.195/api/customerdetail';
 @Injectable({
   providedIn: 'root',
 })
