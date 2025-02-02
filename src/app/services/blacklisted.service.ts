@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BlacklistedPhoneService {
-  private apiUrl = 'https://wcacheromm.azurewebsites.net/api';
-
+  //private apiUrl = 'https://wcacheromm.azurewebsites.net/api';
+  private apiUrl = 'https://49.147.72.195/api';
   constructor(private http: HttpClient) {}
 
   getBlacklistedPhones(): Observable<any[]> {
