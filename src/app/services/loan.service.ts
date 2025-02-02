@@ -9,7 +9,7 @@ import { LoanDetails } from '../models/loanDetail.model';
 })
 export class LoanService {
   //private apiUrl = 'https://wcacheromm.azurewebsites.net/api/customerDetail';
-  private apiUrl = 'http://49.147.72.195/api/customerdetail';
+  private apiUrl = 'https://49.147.72.195/api/customerdetail';
   constructor(private http: HttpClient) {}
 
    getAll(): Observable<LoanDetails[]> {
